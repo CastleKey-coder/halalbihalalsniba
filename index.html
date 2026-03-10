@@ -158,50 +158,72 @@
             .top-center {
                 width: 160px;
             }
+
+            .corner-left,
+            .corner-right {
+                width: 140px;
+            }
+
+            .corner-bottom-left,
+            .corner-bottom-right {
+                width: 140px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .time-box span {
+                font-size: 26px;
+            }
+        }
+
+        .responsive-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* h2 responsif */
+        .responsive-text.h2 {
+            font-size: clamp(16px, 4vw, 32px);
         }
 
         @media(max-width:480px) {
             .top-center {
                 width: 120px;
             }
-        }
-
-        /* responsive */
-
-        @media(max-width:768px) {
-
-            .corner-left,
-            .corner-right {
-                width: 140px;
-            }
-
-        }
-
-        @media(max-width:480px) {
 
             .corner-left,
             .corner-right {
                 width: 110px;
             }
 
-        }
-
-        @media(max-width:768px) {
-
-            .corner-bottom-left,
-            .corner-bottom-right {
-                width: 140px;
-            }
-
-        }
-
-        @media(max-width:480px) {
-
             .corner-bottom-left,
             .corner-bottom-right {
                 width: 110px;
             }
 
+            .container {
+                padding: 25px;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .time-box {
+                padding: 15px;
+                min-width: 70px;
+            }
+
+            .hero-image {
+                max-width: 300px;
+            }
+
+            .logo-undangan {
+                width: 90px;
+            }
         }
 
         /* halaman pembuka */
@@ -348,49 +370,6 @@
             }
         }
 
-        /* responsive */
-
-        @media(max-width:768px) {
-
-            h1 {
-                font-size: 32px;
-            }
-
-            .time-box span {
-                font-size: 26px;
-            }
-
-        }
-
-        @media(max-width:480px) {
-
-            .container {
-                padding: 25px;
-            }
-
-            .countdown {
-                gap: 10px;
-            }
-
-            .time-box {
-                padding: 15px;
-                min-width: 70px;
-            }
-
-            .hero-image {
-                max-width: 300px;
-            }
-
-        }
-
-        @media(max-width:480px) {
-
-            .logo-undangan {
-                width: 90px;
-            }
-
-        }
-
         /* animasi putar */
 
         @keyframes putarKanan {
@@ -483,7 +462,7 @@
 
         <div class="container">
 
-            <h2>ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h2>
+            <h2 class="responsive-text h2">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h2>
 
             <p>
                 Atas Rahmat Allah Yang Mahaa Esa, Kami bermaksud mengundang Anda di acara
@@ -543,9 +522,7 @@
 
             <p>Demikian undangan ini kami sampaikan. Besar harapan kami Bapak/Ibu berkenan hadir. Terima kasih</p>
 
-            <h2>
-                وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
-            </h2>
+            <h2 class="responsive-text h2"> وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
 
         </div>
 
@@ -634,6 +611,3 @@
 
 
 </html>
-
-
-
