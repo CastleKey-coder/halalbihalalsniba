@@ -10,6 +10,29 @@
         rel="stylesheet">
 
     <style>
+        /* background container mulai halaman kedua */
+
+        .section .container {
+            background: rgba(4, 25, 82, 0.75);
+            border: 2px solid rgba(221, 200, 160, 0.6);
+            border-radius: 20px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* halaman pembuka tetap tanpa background */
+
+        .hero .container {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .section .container:hover {
+            transform: translateY(-3px);
+            transition: 0.3s;
+        }
+
         /* navigation dot bawah*/
 
         .nav-dots {
