@@ -10,6 +10,47 @@
         rel="stylesheet">
 
     <style>
+        /* navigation dot bawah*/
+
+        .nav-dots {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            z-index: 999;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        /* muncul setelah hero */
+
+        .nav-dots.show {
+            opacity: 1;
+        }
+
+        .nav-dots span {
+            width: 12px;
+            height: 12px;
+            background: #ddc8a0;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .nav-dots span:hover {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .nav-dots span.active {
+            opacity: 1;
+            background: white;
+        }
+
         .music-btn {
             position: fixed;
             bottom: 25px;
@@ -396,6 +437,15 @@
 
 <body>
 
+    <div class="nav-dots" id="navDots">
+        <span onclick="goSection(1)"></span>
+        <span onclick="goSection(2)"></span>
+        <span onclick="goSection(3)"></span>
+        <span onclick="goSection(4)"></span>
+        <span onclick="goSection(5)"></span>
+        <span onclick="goSection(6)"></span>
+    </div>
+
     <button id="musicToggle" class="music-btn">🔊</button>
 
     <img src="pojok kiri atas.png" class="corner-left">
@@ -412,8 +462,8 @@
             <img src="tengah2.png" class="hero-image">
 
             <h1>Halalbihalal</h1>
-            <h2>Atas Rahmat Allah Yang Maha Esa,</h2>
-            <h2>Kami mengundang Bapak/Ibu Sarimbit :</h2>
+            <h2>Atas Rahmat Allah Yang Maha Esa</h2>
+            <h2>Mengundang Bapak/Ibu Sarimbit :</h2>
 
             <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
 
@@ -465,7 +515,7 @@
             <h2 class="responsive-text h2">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h2>
 
             <p>
-                Atas Rahmat Allah Yang Maha Esa, Kami bermaksud mengundang Bapak/Ibu di acara
+                Atas Rahmat Allah Yang Mahaa Esa, Kami bermaksud mengundang Anda di acara
             </p>
 
             <img src="sekolah.png" class="sekolah">
@@ -548,6 +598,46 @@
     </audio>
 
     <script>
+        const sections = document.querySelectorAll(".hero, .section");
+        const dots = document.querySelectorAll(".nav-dots span");
+        const navDots = document.getElementById("navDots");
+
+        function goSection(index) {
+            sections[index].scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+        window.addEventListener("scroll", () => {
+
+            let current = 0;
+
+            sections.forEach((section, i) => {
+                const top = section.offsetTop - 200;
+
+                if (scrollY >= top) {
+                    current = i;
+                }
+            });
+
+            /* tampilkan dot setelah hero */
+
+            if (current > 0) {
+                navDots.classList.add("show");
+            } else {
+                navDots.classList.remove("show");
+            }
+
+            /* aktifkan dot */
+
+            dots.forEach(dot => dot.classList.remove("active"));
+
+            if (current > 0 && dots[current - 1]) {
+                dots[current - 1].classList.add("active");
+            }
+
+        });
+
 
         /* fungsi scroll */
 
