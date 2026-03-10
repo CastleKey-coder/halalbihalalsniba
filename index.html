@@ -63,11 +63,11 @@
             width: 100%;
             height: 100%;
 
-            background-image: url("background.png");
+            background-image: url("background2.png");
             background-repeat: repeat;
             background-size: 400px;
 
-            opacity: 95%;
+            opacity: 30%;
 
             z-index: -2;
         }
@@ -214,7 +214,16 @@
         }
 
         .hero h1 {
-            font-size: 20px;
+            font-size: 40px;
+            font-family: 'Berkshire Swash', cursive;
+            -webkit-text-stroke: 0.2px #ddc8a0;
+            color: #041952;
+        }
+
+        .hero .container h2 {
+            font-size: 30px;
+            font-family: 'Bree Serif', serif;
+            color: #ddc8a0;
         }
 
         .container {
@@ -224,14 +233,22 @@
             width: 100%;
         }
 
+        .container h2 {
+            color: #ddc8a0;
+            font-size: 40px;
+        }
+
         h1 {
             font-size: 40px;
             margin-bottom: 10px;
+            color: #041952;
+            -webkit-text-stroke: 0.2px #ddc8a0
         }
 
         p {
             font-size: 18px;
             margin-bottom: 25px;
+            color: #ddc8a0;
         }
 
         .hero-image {
@@ -239,6 +256,11 @@
             max-width: 450px;
             margin: 0 auto 25px auto;
             display: block;
+        }
+
+        .logo-undangan {
+            width: 120px;
+            margin-bottom: 15px;
         }
 
         /* tombol */
@@ -249,8 +271,8 @@
             font-size: 18px;
             border: none;
             border-radius: 30px;
-            background: #041952;
-            color: white;
+            background: #ddc8a0;
+            color: #041952;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -354,6 +376,14 @@
 
         }
 
+        @media(max-width:480px) {
+
+            .logo-undangan {
+                width: 90px;
+            }
+
+        }
+
         /* animasi putar */
 
         @keyframes putarKanan {
@@ -393,10 +423,11 @@
     <div class="hero">
         <div class="container">
 
-            <img src="tengah.png" class="hero-image">
+            <img src="tengah2.png" class="hero-image">
 
-            <h1>Atas Rahmat Allah Yang Maha Esa</h1>
-            <h1>Mengundang Bapak/Ibu Sarimbit :</h1>
+            <h1>Halalbihalal</h1>
+            <h2>Atas Rahmat Allah Yang Maha Esa</h2>
+            <h2>Mengundang Bapak/Ibu Sarimbit :</h2>
 
             <button class="btn" onclick="bukaUndangan()">Buka Undangan</button>
 
@@ -409,6 +440,7 @@
     <div class="section" id="undangan">
 
         <div class="container">
+            <img src="logo smp.png" class="logo-undangan">
             <h1>Halalbihalal</h1>
             <p>SMP Negeri 1 Banyakan</p>
             <div class="countdown">
@@ -444,7 +476,7 @@
 
         <div class="container">
 
-            <h1>ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h1>
+            <h2>ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</h2>
 
             <p>
                 Atas Rahmat Allah Yang Mahaa Esa, Kami bermaksud mengundang Anda di acara
@@ -502,9 +534,9 @@
 
             <p>Demikian undangan ini kami sampaikan. Besar harapan kami Bapak/Ibu berkenan hadir. Terima kasih</p>
 
-            <p>
+            <h2>
                 وَالسَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
-            </p>
+            </h2>
 
         </div>
 
