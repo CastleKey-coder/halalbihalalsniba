@@ -9,6 +9,27 @@
         rel="stylesheet">
 
     <style>
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: none;
+            background: #041952;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: 0.3s;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
         .section h1 {
             font-family: 'Berkshire Swash', cursive;
         }
@@ -192,7 +213,7 @@
             padding: 20px;
         }
 
-        .hero h1{
+        .hero h1 {
             font-size: 20px;
         }
 
@@ -359,6 +380,8 @@
 
 <body>
 
+    <button id="musicToggle" class="music-btn">🔊</button>
+
     <img src="pojok kiri atas.png" class="corner-left">
     <img src="pojok kanan atas.png" class="corner-right">
     <img src="tengah atas.png" class="top-center">
@@ -463,11 +486,9 @@
                 SMP Negeri 1 Banyakan <br>
                 Jl. Bendungan No. 3 Ds. Tiron Kec. Banyakan
             </p>
-
-<a href="https://maps.app.goo.gl/ep9Z3EKPULMpPJuz7">
+            <a href="https://maps.app.goo.gl/ep9Z3EKPULMpPJuz7">
                 <button class="btn">Google Maps</button>
             </a>
-            
         </div>
 
     </div>
@@ -504,6 +525,9 @@
 
     </div>
 
+    <audio id="bgMusic" loop>
+        <source src="bimbo-taqobballah.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
 
@@ -539,11 +563,33 @@
 
         }, 1000);
 
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicToggle");
+
+        /* musik otomatis saat buka undangan */
+
+        function bukaUndangan() {
+            document.getElementById("undangan").scrollIntoView({ behavior: "smooth" });
+            music.play();
+        }
+
+        /* tombol mute / unmute */
+
+        musicBtn.addEventListener("click", function () {
+
+            if (music.paused) {
+                music.play();
+                musicBtn.innerHTML = "🔊";
+            } else {
+                music.pause();
+                musicBtn.innerHTML = "🔇";
+            }
+
+        });
+
     </script>
 
 </body>
 
 
 </html>
-
-
