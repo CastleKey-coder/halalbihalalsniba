@@ -110,6 +110,11 @@ body {
   background: #041952;
 }
 
+body.lock-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* background layer */
 
 body::after {
