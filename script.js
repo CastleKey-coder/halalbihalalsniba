@@ -8,18 +8,6 @@ behavior:"smooth"
 });
 }
 
-function bukaUndangan(){
-
-document.body.classList.remove("lock-scroll");
-
-document.getElementById("undangan").scrollIntoView({
-behavior:"smooth"
-});
-
-music.play();
-
-}
-
 window.addEventListener("scroll",()=>{
 
 let current=0;
@@ -82,18 +70,14 @@ document.querySelector(".countdown").innerHTML="Acara Dimulai!";
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-document.addEventListener("DOMContentLoaded", () => {
+musicBtn.addEventListener("click",function(){
 
-music.volume = 0.5;
-
-let playPromise = music.play();
-
-if (playPromise !== undefined) {
-playPromise.catch(() => {
-document.addEventListener("click", () => {
+if(music.paused){
 music.play();
-},{ once:true });
-});
+musicBtn.innerHTML="🔊";
+}else{
+music.pause();
+musicBtn.innerHTML="🔇";
 }
 
 });
